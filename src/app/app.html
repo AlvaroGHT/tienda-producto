@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>Bienvenido a {{ nombreTienda }}</h1>
+  <p>Encargado: {{ encargado }} | Sucursal N° {{ numeroSucursal }}</p>
+
+  <!-- Mensaje condicional de la tienda -->
+  @if (tiendaAbierta) {
+    <p class="abierto">✅ Tienda abierta</p>
+  } @else {
+    <p class="cerrado">❌ Tienda cerrada</p>
+  }
+
+  <hr>
+
+  <!-- Lista de categorías -->
+  <h3>Categorías disponibles:</h3>
+  <ul>
+    @for (cat of categorias; track cat) {
+      <li>{{ cat }}</li>
+    }
+  </ul>
+
+  <hr>
+
+  <!-- Detalle del producto -->
+  <h3>Producto Destacado</h3>
+  <div class="producto-card">
+    <p><strong>Nombre:</strong> {{ producto.nombre }}</p>
+    <p><strong>Precio:</strong> Bs {{ producto.precio }}</p>
+
+    @if (producto.disponible) {
+      <p class="abierto">📦 Producto disponible</p>
+    } @else {
+      <p class="cerrado">🚫 Producto agotado</p>
+    }
+  </div>
+</div>

@@ -24,7 +24,7 @@ export class App {
   // Producto
   producto: Producto = {
     nombre: 'Mochila juvenil Irun',
-    precio: 150, // Bs
+    precio: 150,
     disponible: true
   };
 }
